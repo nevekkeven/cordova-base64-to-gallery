@@ -80,12 +80,12 @@ public class Base64ToGallery extends CordovaPlugin {
       String deviceVersion = Build.VERSION.RELEASE;
       Calendar c           = Calendar.getInstance();
 	  
-	  Int number = c.get(Calendar.MONTH) + 1;
+	  int number = c.get(Calendar.MONTH) + 1;
 	  String month = "" + number;
 	  if(number < 10) 
 		month = "0" + number;
 	
-      number = c.get(Calendar.DAY);
+      number = c.get(Calendar.DAY_OF_MONT);
 	  String day = "" + number;
 	  if(number < 10) 
 		day = "0" + number;
