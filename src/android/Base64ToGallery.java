@@ -85,7 +85,7 @@ public class Base64ToGallery extends CordovaPlugin {
 	  if(number < 10) 
 		month = "0" + number;
 	
-      number = c.get(Calendar.DAY_OF_MONT);
+      number = c.get(Calendar.DAY_OF_MONTH);
 	  String day = "" + number;
 	  if(number < 10) 
 		day = "0" + number;
