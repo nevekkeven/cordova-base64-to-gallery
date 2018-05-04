@@ -79,13 +79,45 @@ public class Base64ToGallery extends CordovaPlugin {
     try {
       String deviceVersion = Build.VERSION.RELEASE;
       Calendar c           = Calendar.getInstance();
+	  
+	  Int number = c.get(Calendar.MONTH) + 1;
+	  String month = "" + number;
+	  if(number < 10) 
+		month = "0" + number;
+	
+      number = c.get(Calendar.DAY);
+	  String day = "" + number;
+	  if(number < 10) 
+		day = "0" + number;
+	
+	  number = c.get(Calendar.HOUR_OF_DAY);
+	  String hour = "" + number;
+	  if(number < 10) 
+		hour = "0" + number;
+	
+	  number = c.get(Calendar.MINUTE);
+	  String minute = "" + number;
+	  if(number < 10) 
+		minute = "0" + number;
+	
+	  number = c.get(Calendar.SECOND);
+	  String second = "" + number;
+	  if(number < 10) 
+		second = "0" + number;
+	
       String date          = EMPTY_STR
                               + c.get(Calendar.YEAR)
-                              + c.get(Calendar.MONTH)
-                              + c.get(Calendar.DAY_OF_MONTH)
-                              + c.get(Calendar.HOUR_OF_DAY)
-                              + c.get(Calendar.MINUTE)
-                              + c.get(Calendar.SECOND);
+							  + "-"
+                              + month
+							  + "-"
+                              + day
+							  + "T"
+                              + hour
+							  + "-"
+                              + minute
+							  + "-"
+                              + second;
+	  
 
       int check = deviceVersion.compareTo("2.3.3");
 
